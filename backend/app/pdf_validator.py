@@ -231,16 +231,21 @@ def validate_pdf_hybrid(filepath: str) -> dict:
 
     if not xmp.get("version_present") or xmp.get("version_empty"):
         xmp_valid = False
+        found_val = "(leer)" if xmp.get("version_empty") else "(fehlt)"
         issues.append(
             build_issue(
                 level="error",
                 category="Einbettung",
                 rule_code="RM-XMP-023",
                 description=(
-                    "[RM-XMP-023]-Der Wert der im PDF angegebenen Version des hybriden Dokuments "
-                    "ist ungültig oder leer."
+                    f"[RM-XMP-023]-Feld 'fx:Version' (ZUGFeRD/Factur-X-Version) in den "
+                    f"XMP-Metadaten ist ungültig oder leer "
+                    f"(gefunden: {found_val}, erwartet: '3.0')."
                 ),
-                text="Die Factur-X-Version in den XMP-Metadaten fehlt oder ist leer.",
+                text=(
+                    f"Feld 'fx:Version': ZUGFeRD/Factur-X-Version fehlt oder ist leer "
+                    f"(gefunden: {found_val}, erwartet: '3.0')."
+                ),
                 step_id="embedding",
                 source="embedding",
             )
@@ -251,10 +256,12 @@ def validate_pdf_hybrid(filepath: str) -> dict:
                 category="Einbettung",
                 rule_code="RM-XMP-025",
                 description=(
-                    "[RM-XMP-025]-Der Wert der im PDF angegebenen Version des hybriden Dokuments "
-                    "soll >>3.0<< sein."
+                    "[RM-XMP-025]-Feld 'fx:Version' (ZUGFeRD/Factur-X-Version) in den "
+                    f"XMP-Metadaten soll '3.0' sein (gefunden: {found_val})."
                 ),
-                text="Die erwartete Factur-X-Version 3.0 fehlt in den XMP-Metadaten.",
+                text=(
+                    f"Feld 'fx:Version': Erwartet '3.0', gefunden: {found_val}."
+                ),
                 step_id="embedding",
                 source="embedding",
             )
@@ -267,10 +274,10 @@ def validate_pdf_hybrid(filepath: str) -> dict:
                 category="Einbettung",
                 rule_code="RM-XMP-025",
                 description=(
-                    "[RM-XMP-025]-Der Wert der im PDF angegebenen Version des hybriden Dokuments "
-                    f"soll >>3.0<< sein (gefunden: {xmp.get('version')})."
+                    f"[RM-XMP-025]-Feld 'fx:Version' (ZUGFeRD/Factur-X-Version) soll '3.0' sein "
+                    f"(gefunden: '{xmp.get('version')}')."
                 ),
-                text=f"Erwartete Factur-X-Version 3.0, gefunden: {xmp.get('version')}.",
+                text=f"Feld 'fx:Version': Erwartet '3.0', gefunden: '{xmp.get('version')}'.",
                 step_id="embedding",
                 source="embedding",
             )
