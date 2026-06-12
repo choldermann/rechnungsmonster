@@ -454,6 +454,30 @@ h1 {
   line-height: 1.55;
 }
 
+.disclaimer-note {
+  margin-top: 24px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(40, 40, 50, 0.6);
+  border: 1px solid #444;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.disclaimer-note p {
+  margin: 0 0 10px;
+}
+
+.disclaimer-note p:last-child {
+  margin-bottom: 0;
+}
+
+.disclaimer-note-hint {
+  color: #bbb;
+  font-weight: 600;
+}
+
 .upload-section {
   display: flex;
   flex-direction: column;

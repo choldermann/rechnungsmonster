@@ -16,10 +16,17 @@ SITE_URL = "https://rechnungsmonster.monstersuite.de"
 SITE_LABEL = "rechnungsmonster.monstersuite.de"
 
 DISCLAIMER = (
-    "Bei dem Validierungsergebnis handelt es sich nicht um eine rechtliche, steuerrechtliche "
-    "oder betriebswirtschaftliche Beratung. Die geprüfte Datei wurde nach der Prüfung nicht "
-    "gespeichert. Rechnungsmonster haftet nicht für die Richtigkeit, Aktualität und "
-    "Vollständigkeit der Validierungsergebnisse."
+    "Die von Rechnungsmonster bereitgestellten Validierungsergebnisse, Hinweise und Empfehlungen "
+    "dienen ausschließlich der technischen Prüfung elektronischer Rechnungen und stellen keine "
+    "Rechts-, Steuer- oder Unternehmensberatung dar.\n\n"
+    "Die Validierung erfolgt auf Basis der jeweils unterstützten Standards und Regelwerke. "
+    "Trotz sorgfältiger Entwicklung übernimmt Rechnungsmonster keine Gewähr für die Richtigkeit, "
+    "Vollständigkeit oder Aktualität der bereitgestellten Informationen und Prüfergebnisse.\n\n"
+    "Die Nutzung der Ergebnisse erfolgt auf eigenes Risiko. Für Entscheidungen oder Maßnahmen, "
+    "die auf Grundlage der bereitgestellten Informationen getroffen werden, wird keine Haftung "
+    "übernommen. Im Zweifel sollte fachkundiger Rat eingeholt werden.\n\n"
+    "Hinweis: Ein erfolgreiches Validierungsergebnis bedeutet nicht automatisch, dass eine "
+    "Rechnung steuerlich, rechtlich oder buchhalterisch korrekt ist."
 )
 
 
