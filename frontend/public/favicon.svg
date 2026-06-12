@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" fill="#111111" rx="16"/>
+  <!-- Glitch layers -->
+  <rect x="18" y="22" width="64" height="56" rx="8" fill="#ff00ff" opacity="0.08"/>
+  <rect x="22" y="18" width="64" height="56" rx="8" fill="#00ffff" opacity="0.08"/>
+
+  <!-- Geldschein-Ohren seitlich -->
+  <!-- Linkes Ohr -->
+  <rect x="4"  y="28" width="12" height="16" rx="2" fill="#fce499" opacity="0.9"/>
+  <rect x="2"  y="31" width="12" height="16" rx="2" fill="#fce499" opacity="0.7"/>
+  <rect x="0"  y="34" width="12" height="16" rx="2" fill="#fce499"/>
+  <rect x="2"  y="37" width="8"  height="2"  rx="1" fill="#111111" opacity="0.5"/>
+  <rect x="2"  y="41" width="6"  height="1"  rx="1" fill="#111111" opacity="0.4"/>
+  <rect x="2"  y="44" width="7"  height="1"  rx="1" fill="#111111" opacity="0.3"/>
+  <rect x="1"  y="35" width="3"  height="3"  fill="#00ffff" opacity="0.5"/>
+  <!-- Rechtes Ohr -->
+  <rect x="84" y="28" width="12" height="16" rx="2" fill="#fce499" opacity="0.9"/>
+  <rect x="86" y="31" width="12" height="16" rx="2" fill="#fce499" opacity="0.7"/>
+  <rect x="88" y="34" width="12" height="16" rx="2" fill="#fce499"/>
+  <rect x="90" y="37" width="8"  height="2"  rx="1" fill="#111111" opacity="0.5"/>
+  <rect x="90" y="41" width="6"  height="1"  rx="1" fill="#111111" opacity="0.4"/>
+  <rect x="90" y="44" width="7"  height="1"  rx="1" fill="#111111" opacity="0.3"/>
+  <rect x="96" y="35" width="3"  height="3"  fill="#ff00ff" opacity="0.5"/>
+
+  <!-- Monster-Körper = Rechnung -->
+  <rect x="14" y="18" width="72" height="70" rx="6" fill="#1a1a1a" stroke="#fce499" stroke-width="1.5"/>
+
+  <!-- Rechnungs-Kopfzeile -->
+  <rect x="14" y="18" width="72" height="12" rx="6" fill="#fce499" opacity="0.13"/>
+  <rect x="14" y="26" width="72" height="4"  fill="#fce499" opacity="0.13"/>
+  <rect x="18" y="20" width="8"  height="8" rx="1" fill="#fce499" opacity="0.7"/>
+  <rect x="19" y="21" width="6"  height="6" fill="#111111"/>
+  <rect x="20" y="22" width="4"  height="4" fill="#fce499" opacity="0.4"/>
+  <rect x="30" y="21" width="20" height="3" rx="1" fill="#fce499" opacity="0.6"/>
+  <rect x="30" y="25" width="12" height="2" rx="1" fill="#fce499" opacity="0.3"/>
+  <rect x="62" y="21" width="6"  height="2" rx="1" fill="#00ffff" opacity="0.5"/>
+  <rect x="70" y="21" width="12" height="2" rx="1" fill="#fce499" opacity="0.4"/>
+  <rect x="62" y="25" width="20" height="2" rx="1" fill="#fce499" opacity="0.25"/>
+
+  <!-- AUGEN -->
+  <rect x="33" y="32" width="10" height="10" fill="#fce499"/>
+  <rect x="35" y="34" width="6"  height="6"  fill="#111111"/>
+  <rect x="37" y="36" width="3"  height="3"  fill="#fce499" opacity="0.7"/>
+  <rect x="32" y="32" width="3"  height="2"  fill="#00ffff" opacity="0.6"/>
+  <rect x="57" y="32" width="10" height="10" fill="#fce499"/>
+  <rect x="59" y="34" width="6"  height="6"  fill="#111111"/>
+  <rect x="61" y="36" width="3"  height="3"  fill="#fce499" opacity="0.7"/>
+  <rect x="64" y="33" width="3"  height="2"  fill="#ff00ff" opacity="0.55"/>
+
+  <!-- MUND = Rechnungs-Positionen-Tabelle -->
+  <rect x="18" y="45" width="64" height="14" rx="2" fill="#111111" stroke="#fce499" stroke-width="1"/>
+  <rect x="20" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="28" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="36" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="44" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="52" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="60" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="68" y="45" width="6"  height="5" rx="1" fill="#fce499" opacity="0.8"/>
+  <rect x="22" y="50" width="28" height="7" rx="1" fill="#00ffff" opacity="0.4"/>
+  <rect x="52" y="50" width="18" height="7" rx="1" fill="#00ffff" opacity="0.25"/>
+  <rect x="24" y="52" width="4"  height="3" rx="1" fill="#fce499" opacity="0.7"/>
+  <rect x="30" y="52" width="8"  height="1" rx="1" fill="#fce499" opacity="0.4"/>
+  <rect x="30" y="54" width="6"  height="1" rx="1" fill="#fce499" opacity="0.3"/>
+
+  <!-- Rechnungs-Positionen -->
+  <rect x="18" y="62" width="64" height="1" fill="#fce499" opacity="0.3"/>
+  <rect x="18" y="64" width="32" height="2" rx="1" fill="#fce499" opacity="0.4"/>
+  <rect x="60" y="64" width="8"  height="2" rx="1" fill="#fce499" opacity="0.5"/>
+  <rect x="70" y="64" width="10" height="2" rx="1" fill="#fce499" opacity="0.4"/>
+  <rect x="18" y="68" width="26" height="2" rx="1" fill="#fce499" opacity="0.35"/>
+  <rect x="60" y="68" width="8"  height="2" rx="1" fill="#fce499" opacity="0.5"/>
+  <rect x="70" y="68" width="10" height="2" rx="1" fill="#fce499" opacity="0.4"/>
+  <rect x="18" y="72" width="30" height="2" rx="1" fill="#fce499" opacity="0.3"/>
+  <rect x="60" y="72" width="8"  height="2" rx="1" fill="#fce499" opacity="0.5"/>
+  <rect x="70" y="72" width="10" height="2" rx="1" fill="#fce499" opacity="0.4"/>
+  <rect x="18" y="76" width="64" height="1" fill="#fce499" opacity="0.3"/>
+  <rect x="18" y="78" width="20" height="3" rx="1" fill="#fce499" opacity="0.6"/>
+  <rect x="60" y="78" width="8"  height="3" rx="1" fill="#fce499" opacity="0.7"/>
+  <rect x="70" y="78" width="10" height="3" rx="1" fill="#00ffff" opacity="0.7"/>
+  <rect x="60" y="83" width="8"  height="2" rx="1" fill="#fce499" opacity="0.3"/>
+  <rect x="70" y="83" width="10" height="2" rx="1" fill="#fce499" opacity="0.35"/>
+
+  <!-- Scan lines -->
+  <rect x="14" y="43" width="72" height="1" fill="#fce499" opacity="0.05"/>
+  <rect x="14" y="62" width="72" height="1" fill="#fce499" opacity="0.05"/>
+  <!-- Glitch accents -->
+  <rect x="14" y="37" width="10" height="2" fill="#00ffff" opacity="0.12"/>
+  <rect x="76" y="55" width="10" height="1" fill="#ff00ff" opacity="0.10"/>
+  <!-- Corner markers -->
+  <rect x="14" y="18" width="4" height="4" fill="#fce499" opacity="0.3"/>
+  <rect x="82" y="18" width="4" height="4" fill="#fce499" opacity="0.3"/>
+  <rect x="14" y="84" width="4" height="4" fill="#fce499" opacity="0.3"/>
+  <rect x="82" y="84" width="4" height="4" fill="#fce499" opacity="0.3"/>
+</svg>

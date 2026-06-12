@@ -1,0 +1,34 @@
+services:
+  validator:
+    image: apps4everything/kosit-validator-xrechnung:3.0.2-1
+    container_name: rechnungsmonster-validator
+    restart: unless-stopped
+    networks:
+      - internal
+
+  backend:
+    build: ./backend
+    container_name: rechnungsmonster-backend
+    restart: unless-stopped
+    environment:
+      - VALIDATOR_URL=http://rechnungsmonster-validator:8081
+    depends_on:
+      - validator
+    networks:
+      - internal
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: rechnungsmonster-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+    name: rechnungsmonster_internal
