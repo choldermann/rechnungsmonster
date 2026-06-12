@@ -595,6 +595,44 @@ h1 {
   font-size: 0.82rem;
 }
 
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.result-header h2 {
+  margin: 0;
+}
+
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--text-secondary, #888);
+  border: 1.5px solid var(--border, #333);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.reset-btn:hover {
+  border-color: #fce499;
+  color: #fce499;
+  background: rgba(252, 228, 153, 0.06);
+}
+
 .upload-btn {
   display: inline-flex;
   align-items: center;

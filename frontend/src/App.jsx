@@ -24,6 +24,12 @@ function App() {
     }
   }
 
+  function handleReset() {
+    setFile(null);
+    setUploadResult(null);
+    setError("");
+  }
+
   async function handleUpload() {
     if (!file) {
       setError("Bitte zuerst eine Datei auswählen.");
@@ -110,7 +116,12 @@ function App() {
 
         {uploadResult && (
           <div className="result">
-            <h2>Prüfung abgeschlossen</h2>
+            <div className="result-header">
+              <h2>Prüfung abgeschlossen</h2>
+              <button className="reset-btn" onClick={handleReset}>
+                Neue Prüfung
+              </button>
+            </div>
 
             <p>
               <strong>Dateiname:</strong> {uploadResult.original_filename}
