@@ -8,6 +8,9 @@ services:
     container_name: rechnungsmonster-backend
     ports:
       - "8020:8000"
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/main.py:/app/main.py
     environment:
       - VALIDATOR_URL=http://validator:8081
     depends_on:
