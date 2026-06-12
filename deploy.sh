@@ -8,6 +8,7 @@ LOCAL_PATH="$(cd "$(dirname "$0")" && pwd)"
 echo "==> Synchronisiere Dateien nach ${REMOTE}:${REMOTE_PATH} …"
 rsync -av --delete \
   --exclude='.git/' \
+  --exclude='.claude/' \
   --exclude='.env' \
   --exclude='venv/' \
   --exclude='__pycache__/' \
