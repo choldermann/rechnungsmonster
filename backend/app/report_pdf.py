@@ -5,6 +5,8 @@ from io import BytesIO
 from fpdf import FPDF
 from lxml import etree
 
+from app.bt_extractor import extract_bt_fields
+
 FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
@@ -424,6 +426,62 @@ def generate_report_pdf(
     if not kosit_issues and not extended_issues and valid:
         _write_section_title(pdf, "Validierungsdetails")
         _write_key_value(pdf, "Ergebnis", "Keine Fehler oder Warnungen gefunden.")
+
+    # BT-Felder-Seite
+    bt_categories = extract_bt_fields(xml_content)
+    if bt_categories:
+        pdf.add_page()
+        _write_section_title(pdf, "Belegfelder (Business Terms)")
+        pdf.set_font("DejaVu", "", 8)
+        pdf.set_text_color(120, 120, 120)
+        pdf.cell(0, 5, "Aus dem XML extrahierte Felder gemäß EN 16931 / XRechnung", new_x="LMARGIN", new_y="NEXT")
+        pdf.ln(3)
+
+        BT_COL = 46
+        LABEL_COL = 62
+        VAL_COL = pdf.epw - BT_COL - LABEL_COL
+
+        for category in bt_categories:
+            if pdf.get_y() > 240:
+                pdf.add_page()
+
+            # Kategorieüberschrift
+            pdf.ln(2)
+            pdf.set_fill_color(40, 40, 40)
+            pdf.set_text_color(220, 220, 220)
+            pdf.set_font("DejaVu", "B", 9)
+            pdf.set_x(pdf.l_margin)
+            pdf.cell(pdf.epw, 6, f"  {category['title']}", fill=True, new_x="LMARGIN", new_y="NEXT")
+            pdf.ln(1)
+
+            for field in category["fields"]:
+                if pdf.get_y() > 270:
+                    pdf.add_page()
+
+                y = pdf.get_y()
+                pdf.set_x(pdf.l_margin)
+                pdf.set_font("DejaVu", "", 7.5)
+                pdf.set_text_color(100, 100, 100)
+                pdf.cell(BT_COL, 5, field["bt"])
+
+                pdf.set_x(pdf.l_margin + BT_COL)
+                pdf.set_font("DejaVu", "B", 7.5)
+                pdf.set_text_color(60, 60, 60)
+                # Label als multi_cell (kann umbrechen)
+                label_y = pdf.get_y()
+                pdf.multi_cell(LABEL_COL, 4.5, field["label"], new_x="RIGHT", new_y="TOP")
+                after_label_y = pdf.get_y()
+
+                pdf.set_xy(pdf.l_margin + BT_COL + LABEL_COL, y)
+                pdf.set_font("DejaVu", "", 7.5)
+                pdf.set_text_color(20, 20, 20)
+                pdf.multi_cell(VAL_COL, 4.5, field["value"], new_x="LMARGIN", new_y="NEXT")
+                after_val_y = pdf.get_y()
+
+                pdf.set_y(max(after_label_y, after_val_y))
+                pdf.ln(0.5)
+
+        pdf.ln(4)
 
     pdf.ln(4)
     pdf.set_font("DejaVu", "", 7.5)
