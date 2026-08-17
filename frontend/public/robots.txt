@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Impressum und Datenschutz sind eigene Routen der App, werden vom nginx-
+# Fallback (try_files ... /index.html) aber mit demselben HTML wie die
+# Startseite ausgeliefert. Ohne diese Regel zaehlten sie als doppelter
+# Inhalt mit identischem Title und identischer H1.
+Disallow: /impressum
+Disallow: /datenschutz

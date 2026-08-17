@@ -5,10 +5,47 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rechnungsmonster — part of monstersuite.de</title>
+    <meta
+      name="description"
+      content="XRechnung, ZUGFeRD und Factur-X kostenlos online prüfen – mit offiziellem KoSIT-Validator. Ohne Anmeldung, ohne Speicherung Ihrer Daten."
+    />
     <link rel="stylesheet" href="/fonts/geist.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <!--
+      Statische Startfassung: Crawler führen kein JavaScript aus und sahen hier
+      bisher einen leeren Body – daher meldete die SEO-Prüfung "H1 fehlt" und
+      "sehr wenig Inhalt". React leert #root beim Mount, für Besucher ändert
+      sich nichts. Die Klassen sind dieselben wie in App.jsx, damit das bereits
+      geladene CSS greift; Texte wortgleich zum Hero in App.jsx – weichen sie
+      voneinander ab, wird daraus Cloaking.
+    -->
+    <div id="root">
+      <div class="page">
+        <div class="card">
+          <header class="hero">
+            <div class="hero-badge">Kostenlos · Anonym · Keine Speicherung</div>
+            <h1>
+              E-Rechnungen prüfen – <em>schnell und ohne Anmeldung.</em>
+            </h1>
+            <p class="subtitle">
+              XRechnung, UBL, CII und ZUGFeRD/Factur-X – mit offiziellem KoSIT-Validator
+              und erweiterten Zusatzprüfungen.
+            </p>
+            <div class="format-tags" aria-label="Unterstützte Formate">
+              <span class="format-tag">XRechnung</span>
+              <span class="format-tag">ZUGFeRD</span>
+              <span class="format-tag">Factur-X</span>
+              <span class="format-tag">PDF &amp; XML</span>
+            </div>
+          </header>
+          <div class="privacy-note">
+            Ihre Datei wird nur zur Prüfung verarbeitet und danach sofort gelöscht.
+            Es werden keine Rechnungsdaten gespeichert.
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
