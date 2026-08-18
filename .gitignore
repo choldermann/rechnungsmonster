@@ -9,3 +9,6 @@ reports/*
 data/
 validator/runtime/*
 
+
+# Claude Code
+.claude/
