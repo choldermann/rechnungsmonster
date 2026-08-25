@@ -44,8 +44,8 @@ def root():
 def version():
     return {
         "kosit_xrechnung": os.getenv("KOSIT_XRECHNUNG_VERSION", "3.0.2"),
-        "kosit_validator": os.getenv("KOSIT_VALIDATOR_VERSION", "1.6.1"),
-        "verapdf": os.getenv("VERAPDF_VERSION", "1.30.1"),
+        "kosit_validator": os.getenv("KOSIT_VALIDATOR_VERSION", "1.6.2"),
+        "verapdf": os.getenv("VERAPDF_VERSION", "1.30.2"),
     }
 
 

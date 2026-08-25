@@ -1,6 +1,6 @@
 services:
   validator:
-    image: apps4everything/kosit-validator-xrechnung:3.0.2-1
+    image: apps4everything/kosit-validator-xrechnung:3.0.2-2
     container_name: rechnungsmonster-validator
     restart: unless-stopped
     networks:
@@ -13,8 +13,8 @@ services:
     environment:
       - VALIDATOR_URL=http://rechnungsmonster-validator:8081
       - KOSIT_XRECHNUNG_VERSION=3.0.2
-      - KOSIT_VALIDATOR_VERSION=1.6.1
-      - VERAPDF_VERSION=1.30.1
+      - KOSIT_VALIDATOR_VERSION=1.6.2
+      - VERAPDF_VERSION=1.30.2
     depends_on:
       - validator
     networks:

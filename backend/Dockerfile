@@ -1,4 +1,4 @@
-FROM verapdf/cli:v1.30.1 AS verapdf
+FROM verapdf/cli:v1.30.2 AS verapdf
 
 FROM python:3.12-slim
 
