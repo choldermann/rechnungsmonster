@@ -1134,6 +1134,14 @@ button {
   color: #c9aa3a !important;
 }
 
+.site-footer-versions {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  opacity: 0.5;
+  letter-spacing: 0.01em;
+}
+
 .legal-wrap {
   max-width: 760px;
   margin: 0 auto;

@@ -1,4 +1,5 @@
 import base64
+import os
 import shutil
 import tempfile
 from pathlib import Path
@@ -37,6 +38,15 @@ def sanitize_validation(validation: dict | None) -> dict | None:
 @app.get("/")
 def root():
     return {"app": "Rechnungsmonster", "status": "running", "storage": "none"}
+
+
+@app.get("/api/version")
+def version():
+    return {
+        "kosit_xrechnung": os.getenv("KOSIT_XRECHNUNG_VERSION", "3.0.2"),
+        "kosit_validator": os.getenv("KOSIT_VALIDATOR_VERSION", "1.6.1"),
+        "verapdf": os.getenv("VERAPDF_VERSION", "1.30.1"),
+    }
 
 
 @app.post("/api/upload")

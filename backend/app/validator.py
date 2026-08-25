@@ -1,5 +1,6 @@
 import os
 import urllib.error
+import urllib.parse
 import urllib.request
 from xml.etree import ElementTree as ET
 
@@ -122,7 +123,7 @@ def validate_invoice_xml(xml_content: str, filename: str = "invoice.xml") -> dic
             "error": "Kein XML-Inhalt vorhanden",
         }
 
-    url = f"{VALIDATOR_URL.rstrip('/')}/{filename}"
+    url = f"{VALIDATOR_URL.rstrip('/')}/{urllib.parse.quote(filename)}"
     request = urllib.request.Request(
         url,
         data=xml_content.encode("utf-8"),
