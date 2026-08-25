@@ -7,3 +7,5 @@ Allow: /
 # Inhalt mit identischem Title und identischer H1.
 Disallow: /impressum
 Disallow: /datenschutz
+
+Sitemap: https://rechnungsmonster.monstersuite.de/sitemap.xml

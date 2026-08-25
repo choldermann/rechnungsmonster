@@ -3,13 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- iOS kennt hier kein SVG und zeigt sonst einen Ausschnitt der Seite. -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rechnungsmonster — part of monstersuite.de</title>
+    <title>XRechnung, ZUGFeRD &amp; Factur-X prüfen | Rechnungsmonster</title>
     <meta
       name="description"
       content="XRechnung, ZUGFeRD und Factur-X kostenlos online prüfen – mit offiziellem KoSIT-Validator. Ohne Anmeldung, ohne Speicherung Ihrer Daten."
     />
+    <link rel="canonical" href="https://rechnungsmonster.monstersuite.de/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rechnungsmonster" />
+    <meta property="og:url" content="https://rechnungsmonster.monstersuite.de/" />
+    <meta property="og:title" content="E-Rechnungen prüfen – schnell und ohne Anmeldung" />
+    <meta
+      property="og:description"
+      content="XRechnung, ZUGFeRD und Factur-X kostenlos online prüfen – mit offiziellem KoSIT-Validator. Ohne Anmeldung, ohne Speicherung Ihrer Daten."
+    />
+    <meta property="og:image" content="https://rechnungsmonster.monstersuite.de/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rechnungsmonster – E-Rechnungen prüfen, ohne Anmeldung" />
+    <meta property="og:locale" content="de_DE" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="E-Rechnungen prüfen – schnell und ohne Anmeldung" />
+    <meta
+      name="twitter:description"
+      content="XRechnung, ZUGFeRD und Factur-X kostenlos online prüfen – mit offiziellem KoSIT-Validator."
+    />
+    <meta name="twitter:image" content="https://rechnungsmonster.monstersuite.de/og-image.png" />
+
     <link rel="stylesheet" href="/fonts/geist.css" />
+
+    <!--
+      WebApplication statt des allgemeinen WebPage: die Seite ist ein Werkzeug,
+      kein Text. price 0 ist Pflicht, damit "kostenlos" maschinenlesbar wird.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Rechnungsmonster",
+        "url": "https://rechnungsmonster.monstersuite.de/",
+        "description": "XRechnung, ZUGFeRD und Factur-X online prüfen – mit dem offiziellen KoSIT-Validator und erweiterten Zusatzprüfungen. Ohne Anmeldung, ohne Speicherung der Rechnungsdaten.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Alle – läuft im Browser",
+        "inLanguage": "de",
+        "image": "https://rechnungsmonster.monstersuite.de/og-image.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "featureList": [
+          "Validierung von XRechnung (UBL und CII)",
+          "Prüfung von ZUGFeRD- und Factur-X-PDFs inklusive eingebettetem XML",
+          "Offizieller KoSIT-Validator für XRechnung 3.0",
+          "Zusatzprüfungen für PDF/A-3, XMP-Metadaten und XML-Einbettung",
+          "PDF-Prüfbericht zum Download"
+        ],
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "MonsterSuite",
+          "url": "https://monstersuite.de"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Holdermann IT",
+          "url": "https://monstersuite.de"
+        }
+      }
+    </script>
   </head>
   <body>
     <!--
@@ -18,9 +84,46 @@
       "sehr wenig Inhalt". React leert #root beim Mount, für Besucher ändert
       sich nichts. Die Klassen sind dieselben wie in App.jsx, damit das bereits
       geladene CSS greift; Texte wortgleich zum Hero in App.jsx – weichen sie
-      voneinander ab, wird daraus Cloaking.
+      voneinander ab, wird daraus Cloaking. Aus demselben Grund stehen hier auch
+      Kopfzeile, Erklärabschnitte und Fußzeile: sie sind wortgleich zu
+      SiteHeader.jsx, InfoAccordions.jsx und SiteFooter.jsx. Ändert sich einer
+      dieser Texte, muss er hier mitgezogen werden.
     -->
     <div id="root">
+      <header class="site-header">
+        <div class="brand">
+          <img src="/rechnungsmonster.svg" alt="Rechnungsmonster" class="brand-logo" />
+          <span class="brand-text">
+            <a href="/" class="brand-title" aria-label="Rechnungsmonster Startseite">
+              <strong>
+                <span class="brand-sig">Rechnungs</span><span class="brand-mon">monster</span>
+              </strong>
+            </a>
+            <a
+              href="https://monstersuite.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="brand-suite"
+            >
+              part of monstersuite.de
+            </a>
+          </span>
+        </div>
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a href="/#how-it-works">So funktioniert's</a>
+          <a href="/#formate">Formate</a>
+          <a href="/#upload">Prüfen</a>
+          <a
+            href="https://monstersuite.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-monster"
+          >
+            MonsterSuite ↗
+          </a>
+        </nav>
+      </header>
+
       <div class="page">
         <div class="card">
           <header class="hero">
@@ -39,12 +142,148 @@
               <span class="format-tag">PDF &amp; XML</span>
             </div>
           </header>
+
           <div class="privacy-note">
             Ihre Datei wird nur zur Prüfung verarbeitet und danach sofort gelöscht.
             Es werden keine Rechnungsdaten gespeichert.
           </div>
+
+          <section
+            id="how-it-works"
+            class="info-accordions"
+            aria-label="Informationen zur Prüfung"
+          >
+            <details class="info-accordion" open>
+              <summary class="info-accordion-summary">So funktioniert's</summary>
+              <div class="info-accordion-body">
+                <ol class="how-steps">
+                  <li>
+                    <strong>Datei hochladen</strong>
+                    <span>
+                      XRechnung-XML, reines EN-16931-XML oder PDF mit eingebetteter
+                      Rechnung (ZUGFeRD/Factur-X)
+                    </span>
+                  </li>
+                  <li>
+                    <strong>KoSIT-Validierung</strong>
+                    <span>
+                      Offizieller Standard für XRechnung 3.0 (XML-Schema, EN&nbsp;16931,
+                      XRechnung-Regeln)
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Zusatzprüfungen</strong>
+                    <span>
+                      Erweitertes Verfahren: PDF/A-3, XMP-Metadaten, XML-Einbettung und
+                      ergänzende Geschäftsregeln
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Ergebnis &amp; Bericht</strong>
+                    <span>
+                      Ampel, Detailbefunde und PDF-Prüfbericht – ohne Speicherung
+                    </span>
+                  </li>
+                </ol>
+                <p class="how-note">
+                  <strong>Wichtig:</strong> Das Gesamtergebnis richtet sich nach dem
+                  <strong>offiziellen KoSIT-Validator</strong>. Zusatzprüfungen zeigen
+                  Abweichungen, die strengere Tools oder Empfänger melden können – auch
+                  wenn KoSIT die XML-Datei als gültig einstuft.
+                </p>
+              </div>
+            </details>
+
+            <details class="info-accordion" id="formate">
+              <summary class="info-accordion-summary">
+                XRechnung, ZUGFeRD &amp; Factur-X – was ist was?
+              </summary>
+              <div class="info-accordion-body">
+                <p class="format-intro">
+                  Alle genannten Formate basieren auf der europäischen Norm EN&nbsp;16931.
+                  Der Unterschied liegt vor allem darin, <em>wie</em> die Rechnung
+                  übermittelt wird – als reine XML-Datei oder als PDF mit eingebetteten
+                  Daten.
+                </p>
+
+                <div class="format-cards">
+                  <article class="format-card">
+                    <h3>XRechnung</h3>
+                    <p class="format-card-tag">Reines XML · B2G-Fokus</p>
+                    <p>
+                      XRechnung ist der deutsche Standard für elektronische Rechnungen
+                      an öffentliche Auftraggeber. Es handelt sich um eine
+                      <strong>reine XML-Datei</strong> (ohne PDF) – meist als CII- oder
+                      UBL-Profil mit deutschen XRechnung-Erweiterungen.
+                    </p>
+                    <p class="format-card-who">
+                      <strong>Typisch eingesetzt von:</strong> Unternehmen und
+                      Einrichtungen, die an Bund, Länder, Kommunen oder andere
+                      öffentliche Stellen fakturieren. Empfänger verlangen oft eine
+                      Leitweg-ID.
+                    </p>
+                  </article>
+
+                  <article class="format-card">
+                    <h3>ZUGFeRD</h3>
+                    <p class="format-card-tag">PDF + XML · B2B in Deutschland</p>
+                    <p>
+                      ZUGFeRD ist ein <strong>hybrides Format</strong>: eine für Menschen
+                      lesbare PDF-Rechnung mit eingebettetem maschinenlesbarem XML
+                      (PDF/A-3). In Deutschland sehr verbreitet im Geschäftsverkehr
+                      zwischen Unternehmen.
+                    </p>
+                    <p class="format-card-who">
+                      <strong>Typisch eingesetzt von:</strong> Mittelstand, Handel und
+                      Dienstleister im B2B, deren Partner weiterhin PDF sehen möchten,
+                      aber strukturierte Daten benötigen.
+                    </p>
+                  </article>
+
+                  <article class="format-card">
+                    <h3>Factur-X</h3>
+                    <p class="format-card-tag">PDF + XML · international (FR/EU)</p>
+                    <p>
+                      Factur-X ist der französische Name für dasselbe hybride Prinzip wie
+                      ZUGFeRD&nbsp;2.x – technisch eng verwandt, ebenfalls PDF/A-3 mit
+                      EN-16931-XML. In Frankreich und zunehmend EU-weit gebräuchlich.
+                    </p>
+                    <p class="format-card-who">
+                      <strong>Typisch eingesetzt von:</strong> Unternehmen mit
+                      internationalen Partnern, französischen Kunden oder ERP-Systemen,
+                      die „Factur-X“ ausliefern.
+                    </p>
+                  </article>
+                </div>
+
+                <p class="format-summary">
+                  <strong>Kurz gesagt:</strong> Behörden und öffentliche Auftraggeber in
+                  Deutschland erwarten meist <strong>XRechnung (XML)</strong>. Im
+                  Unternehmensverkehr sind <strong>ZUGFeRD/Factur-X (PDF mit XML)</strong>
+                  häufig – beides können Sie hier prüfen. Rechnungsmonster extrahiert bei
+                  PDFs automatisch das eingebettete XML und validiert es.
+                </p>
+              </div>
+            </details>
+          </section>
         </div>
       </div>
+
+      <footer class="site-footer">
+        <div class="site-footer-left">
+          <strong>Rechnungsmonster</strong> · part of monstersuite.de
+          <br />
+          <!-- SiteFooter.jsx setzt hier new Date().getFullYear() ein. -->
+          © 2026 · made in Germany
+        </div>
+        <div class="site-footer-right">
+          <a href="https://monstersuite.de" target="_blank" rel="noopener noreferrer">
+            monstersuite.de
+          </a>
+          <a href="/datenschutz">Datenschutz</a>
+          <a href="/impressum">Impressum</a>
+        </div>
+      </footer>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

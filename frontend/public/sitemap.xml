@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Nur die Startseite: /impressum und /datenschutz sind in der robots.txt
+  gesperrt, weil der SPA-Fallback fuer sie dasselbe HTML ausliefert. Was dort
+  gesperrt ist, darf hier nicht stehen - sonst meldet die Pruefung "nicht
+  indexierbare Seiten in der Sitemap".
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://rechnungsmonster.monstersuite.de/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
