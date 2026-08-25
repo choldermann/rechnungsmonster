@@ -60,7 +60,7 @@ export default function InfoAccordions() {
 
           <div className="format-cards">
             <article className="format-card">
-              <h3>XRechnung</h3>
+              <h2>XRechnung</h2>
               <p className="format-card-tag">Reines XML · B2G-Fokus</p>
               <p>
                 XRechnung ist der deutsche Standard für elektronische Rechnungen
@@ -77,7 +77,7 @@ export default function InfoAccordions() {
             </article>
 
             <article className="format-card">
-              <h3>ZUGFeRD</h3>
+              <h2>ZUGFeRD</h2>
               <p className="format-card-tag">PDF + XML · B2B in Deutschland</p>
               <p>
                 ZUGFeRD ist ein <strong>hybrides Format</strong>: eine für Menschen
@@ -93,7 +93,7 @@ export default function InfoAccordions() {
             </article>
 
             <article className="format-card">
-              <h3>Factur-X</h3>
+              <h2>Factur-X</h2>
               <p className="format-card-tag">PDF + XML · international (FR/EU)</p>
               <p>
                 Factur-X ist der französische Name für dasselbe hybride Prinzip wie
